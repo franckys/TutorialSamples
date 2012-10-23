@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: TinymceTest
+Bundle-SymbolicName: tinymceTest; singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: tinymcetest.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.swt,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Eclipse-BundleShape: dir
