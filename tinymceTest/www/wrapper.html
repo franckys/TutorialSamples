@@ -1,0 +1,51 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" href="allsize.css" type="text/css" />
+<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type="text/javascript">
+tinyMCE.init({ 
+		mode : "textareas", 
+		theme : "advanced",
+		paste_auto_cleanup_on_paste : true,
+		plugins : "inlinepopups,fullpage,searchreplace,paste,visualchars,table,contextmenu,customcontextmenu,",
+        theme_advanced_toolbar_location : "external",
+        theme_advanced_buttons1: "bold,italic,underline,|,bullist,numlist,|,forecolor,|,undo,redo,|,code",
+        theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,selectall,|,search,replace,|,visualchars,|, tablecontrols,help",
+		theme_advanced_statusbar_location : "none",
+		paste_text_sticky : true,
+		dialog_type : "modal",
+		setup : function(ed) {
+		    ed.onInit.add(function(ed) {
+		      ed.pasteAsPlainText = true;
+		    });
+		  },
+		height : "100%",
+		extended_valid_elements : "a[name|href|target|title|onclick],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
+        constrain_menus : true
+});
+
+function getEditorText() {
+		var tmce = tinyMCE.get('txtarea');
+		return tmce.getContent();
+}
+	
+function setEditorText(htmlcontent) {
+		var textarea = document.getElementById('txtarea');
+		textarea.value = htmlcontent;
+}
+
+function setFocus() {
+	tinyMCE.execCommand('mceFocus',false,'txtarea');
+}
+
+</script>
+</head>
+<body onMouseOver="setFocus();">
+<div style="position:fixed !important;  left:0px !important; top:54px !important; height:100%; width: 100%; z-index:1;" onMouseOver="setFocus();">
+ <textarea id="txtarea" name="txtarea" style="width:100%; height:100%;" onMouseOver="setFocus();">
+</textarea>
+</div>
+</body>
+</html>
