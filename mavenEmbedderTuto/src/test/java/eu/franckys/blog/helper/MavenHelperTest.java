@@ -33,10 +33,10 @@ public class MavenHelperTest {
 	
 	@Test public void tryRun() throws SettingsException, FileNotFoundException, JAXBException {
 		MavenHelper ml = new MavenHelper();
-		File projectDirectory = new File("/home/theroude/devel/data/tmp/MavenTest/testProjects/test001");
+		File projectDirectory = new File("/home/xyz/devel/data/tmp/MavenTest/testProjects/test001");
 		ml.runBuild(new String[] {"clean", "install"}, 
 				projectDirectory, 
-				new File("/home/theroude/devel/data/tmp/MavenTest"));
+				new File("/home/xyz/devel/data/tmp/MavenTest"));
 		Assert.assertTrue(true);
 		SurefireReportHelper aSurefireReportHelper = new SurefireReportHelper(); 
 		aSurefireReportHelper.loadSurefireResults(projectDirectory);
